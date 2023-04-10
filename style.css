@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Rubik:wght@300;400&family=Ubuntu:wght@700&display=swap');
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: ubuntu, sans-serif;
+}
+
+body{
+
+    background-color: rgb(5, 1, 16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    position: relative;
+    height: 625px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    border: 5px solid red;
+    border-radius: 40px;
+    padding: 25px;
+    box-shadow: 0 0 20px red;
+    flex-direction: column;
+    animation: color-animated 5s linear infinite;
+}
+
+.card .finger-box{
+
+    height: 400px;
+    width: 400px;
+    overflow: hidden;
+    position: relative;
+    animation: finger-animated 2s ease-in-out infinite;
+}
+
+.card .finger-box::after{
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 10px;
+    background-color: red;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 0 10px red;
+    border-radius: 10px;
+}
+
+.card .finger-box svg{
+    margin-top: 25px;
+    filter: drop-shadow(0 0 5px red);
+}
+
+.card .finger-box svg path{
+    fill: red;
+}
+
+.card .text{
+    font-size: 50px;
+    color: red;
+    padding-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+
+@keyframes finger-animated{
+    from,to {
+        height: 10px;
+    }
+    50%{
+        height: 450px;
+    }
+}
+
+@keyframes color-animated{
+
+    from{
+
+        filter: drop-shadow(0 0 5px red) hue-rotate(0deg);
+    }
+    to{
+
+        filter: drop-shadow(0 0 5px red) hue-rotate(360deg);
+    }
+}
